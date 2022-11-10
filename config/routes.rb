@@ -11,6 +11,13 @@ Rails.application.routes.draw do
 
   resources :customers
 
+
+  get "home/top" => "admin/homes#top"
+  get "genres/index" => "admin/genres#index"
+  get "items/new" => "admin/items#new"
+  post "item" => "admin/item#create"
+
+
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }

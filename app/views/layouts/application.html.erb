@@ -9,6 +9,17 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <header>
+    <% if customer_signed_in? %>
+    <%= render 'layouts/header_customer' %>
+    <% elsif admin_signed_in? %>
+    <%= render 'layouts/header_admin' %>
+    <% else %>
+    <%= render 'layouts/header_logout' %>
+    <% end %>
+  </header>
+
   <body>
     <%= yield %>
   </body>

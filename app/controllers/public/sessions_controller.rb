@@ -35,4 +35,5 @@ class Public::SessionsController < Devise::SessionsController
     if @customer.valid_password?(params[:customer][:password])
     end
   end
+end
 
