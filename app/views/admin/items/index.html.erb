@@ -1,0 +1,43 @@
+<div class = "col-md-8 offset-md-1">
+  <h2>商品一覧</h2>
+    <table class="table table=hover table-inverse">
+      <thead>
+        <tr>
+          <th></th>
+          <th>商品ID</th>
+          <th>商品名</th>
+          <th>税抜価格</th>
+          <th>ジャンル</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+    </tsble>
+    <tbody>
+      <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= item.id %>
+        </td>
+        <td>
+          <%= link_to items_show_path(item.id) do %>
+          <% end %>
+        </td>
+        <td>
+          <%= item.price %>
+        </td>
+        <td>
+          <%= genre.name %>
+        </td>
+        <td>
+          <%= item.is_active %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @item %>
+</div>
+
+
+
+

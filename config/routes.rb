@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "genres/index" => "admin/genres#index"
   get "items/new" => "admin/items#new"
   post "item" => "admin/item#create"
+  get "items/index" => "admin/items#index"
+  get "items/show" => "admin/items#show"
 
 
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
