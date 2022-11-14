@@ -9,22 +9,20 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
 }
 
-  resources :customers
+  resource :customers
 
-
-  get "home/top" => "admin/homes#top"
-  get "genres/index" => "admin/genres#index"
-  get "items/new" => "admin/items#new"
-  post "item" => "admin/item#create"
-  get "items/index" => "admin/items#index"
-  get "items/show" => "admin/items#show"
+  get "admin/homes/top" => "admin/homes#top"
+  get "admin/genres/index" => "admin/genres#index"
 
 
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
 
+  namespace :admin do
   resources :admins
+  resources :items
+  end
 
 
 
