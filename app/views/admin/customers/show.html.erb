@@ -1,0 +1,43 @@
+<div class="container">
+  <h2><%= @customer.name %>さんの会員詳細</h2>
+  
+  <table>
+    <thead>
+      <tbody>
+        <tr>
+          <th>会員ID</th>
+          <td><%= @customer.id %></td>
+          <th>氏名</th>
+          <td><%= @customer.first_name %>
+            <%= @customer.last_name %></td>
+          <th>フリガナ</th>
+          <td><%=@customer.first_name_kana %>
+            <%= @customer.last_name_kane %></td>
+          <th>郵便番号</th>
+          <td><%= @customer.postal_code %></td>
+          <th>住所</th>
+          <td><%= @customer.address %></td>
+          <th>電話番号</th>
+          <td><%= @customer.telephone_number %></td>
+          <th>メールアドレス</th>
+          <td><%= email %></td>
+          <th>会員ステータス</th>
+          <td>
+            <% if @customer.is_deleted == false %>
+            退会
+            <% else %>
+            有効
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </thead>
+  </table>
+  <% form_with model: @customer do |f| %>
+  
+  <%= if f.submit "編集する" %>
+   <% link_to edit_admin_customer_path %>
+  <% else %> 
+    <%=f.submit "注文履歴一覧を見る" %>
+    <% link_to 
+</div>

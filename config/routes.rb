@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 }
 
   namespace :admin do
-  resources :admins
   resources :items
+  resources :customers
   end
 
 

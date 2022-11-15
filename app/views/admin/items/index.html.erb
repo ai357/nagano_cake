@@ -2,16 +2,18 @@
   <h2>商品一覧</h2>
     <table class="table table=hover table-inverse">
       <thead>
-        <tr>
-          <th></th>
-          <th>商品ID</th>
-          <th>商品名</th>
-          <th>税抜価格</th>
-          <th>ジャンル</th>
-          <th>ステータス</th>
-        </tr>
+        <tbody>
+          <tr>
+            <th></th>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+          </tr>
+        </tbody>  
       </thead>
-    </tsble>
+    </table>
     <tbody>
       <% @items.each do |item| %>
       <tr>
