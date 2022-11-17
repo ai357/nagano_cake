@@ -1,1 +1,33 @@
-<h1>TOP PAGE</h1>
+<div class="container">
+　<div class="row">
+    <div col>
+      <table>
+        <th>ジャンル検索</th>
+          <tbody>
+            <td></td>
+          </tbody>
+      </table>
+    </div>
+
+
+
+
+
+    <h3>新着商品</h3>
+    <div>
+      <%= image_tag @item.get_image(100×150) %><br>
+      商品名
+      ¥<%= @item.price %>
+
+      <%= image_tag @item.get_image(100×150) %>
+      商品名
+      ¥<%= @item.price %>
+
+      <%= image_tag @item.get_image(100×150) %>
+      商品名
+      ¥<%= @item.price %>
+
+
+    </div>
+  </div>
+</div>
