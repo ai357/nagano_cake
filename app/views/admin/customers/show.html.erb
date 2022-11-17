@@ -1,27 +1,41 @@
 <div class="container">
   <h2><%= @customer.name %>さんの会員詳細</h2>
-  
+
   <table>
     <thead>
       <tbody>
         <tr>
-          <th>会員ID</th>
+          <td>会員ID</td>
           <td><%= @customer.id %></td>
-          <th>氏名</th>
+        </tr>
+        <tr>
+          <td>氏名</td>
           <td><%= @customer.first_name %>
             <%= @customer.last_name %></td>
-          <th>フリガナ</th>
+        </tr>
+        <tr>
+          <td>フリガナ</td>
           <td><%=@customer.first_name_kana %>
             <%= @customer.last_name_kane %></td>
-          <th>郵便番号</th>
+        </tr>
+        <tr>
+          <td>郵便番号</td>
           <td><%= @customer.postal_code %></td>
-          <th>住所</th>
+        </tr>
+        <tr>
+          <td>住所</td>
           <td><%= @customer.address %></td>
-          <th>電話番号</th>
+        </tr>
+        <tr>
+          <td>電話番号</td>
           <td><%= @customer.telephone_number %></td>
-          <th>メールアドレス</th>
+        </tr>
+        <tr>
+          <td>メールアドレス</td>
           <td><%= email %></td>
-          <th>会員ステータス</th>
+        </tr>
+        <tr>
+          <td>会員ステータス</td>
           <td>
             <% if @customer.is_deleted == false %>
             退会
@@ -30,14 +44,16 @@
             <% end %>
           </td>
         </tr>
+        <tr>
+          <td></td>
+          <td>
+            <%= link_to  "編集する", edit_admin_customer_path class: "btn btn-success" %>
+          </td>
+          <td>
+            <%= link_to "注文履歴一覧を見る", admin_homes_top_path class: "btn btn-primary" %>
+          </td>
+        </tr>
       </tbody>
     </thead>
   </table>
-  <% form_with model: @customer do |f| %>
-  
-  <%= if f.submit "編集する" %>
-   <% link_to edit_admin_customer_path %>
-  <% else %> 
-    <%=f.submit "注文履歴一覧を見る" %>
-    <% link_to 
 </div>
