@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>新規会員登録</h2>
+  
+  <%= form_with model: @customer do |f| %>
+  
+  <h6>名前</h6>
+    <label>（姓）</label>
+    <%= f.text_area :last_name %>
+</div>

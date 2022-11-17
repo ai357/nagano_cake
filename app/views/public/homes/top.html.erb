@@ -1,10 +1,16 @@
 <div class="container">
 　<div class="row">
     <div col>
-      <table>
-        <th>ジャンル検索</th>
+      <p>ジャンル検索</p>
+      <table class = "table">
           <tbody>
-            <td></td>
+            <% @genre.each do |genre| %>
+            <tr>
+              <td>
+              <%= genre.name %>
+              </td>
+            </tr>
+            <% end %>
           </tbody>
       </table>
     </div>
@@ -14,18 +20,14 @@
 
 
     <h3>新着商品</h3>
-    <div>
-      <%= image_tag @item.get_image(100×150) %><br>
-      商品名
-      ¥<%= @item.price %>
-
-      <%= image_tag @item.get_image(100×150) %>
-      商品名
-      ¥<%= @item.price %>
-
-      <%= image_tag @item.get_image(100×150) %>
-      商品名
-      ¥<%= @item.price %>
+    <div class = "row">
+      <% @item.each do |item| %>
+    <div class = "col-2">
+        <%= image_tag item.get_image(100,150) %>
+        商品名
+        ¥<%= item.price %>
+    </div>
+      <% end %>
 
 
     </div>
