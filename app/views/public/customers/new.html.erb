@@ -1,9 +1,29 @@
 <div class="container">
   <h2>新規会員登録</h2>
-  
+
   <%= form_with model: @customer do |f| %>
-  
+
   <h6>名前</h6>
     <label>（姓）</label>
     <%= f.text_area :last_name %>
+    <label>（名）</label>
+    <%= f.text_area :first_name %>
+  <h6>フリガナ</h6>
+    <label>（セイ）</label>
+    <%= f.text_area :last_name %>
+    <label>（メイ）</label>
+    <%= f.text_area :first_name %>
+  <h6>メールアドレス</h6>
+    <%= f.text_area :email %>
+  <h6>郵便番号（ハイフンなし）</h6>
+    <%= f.text_area :postal_code %>
+  <h6>パスワード（6文字以上）</h6>
+    <%= f.text_area :passward %>
+  <h6>パスワード（確認用）</h6>
+    <%= f.text_area :passward %>
+
+    <%= f.submit "新規登録" %>
+
+  <h2>既に登録済みの方</h2>
+    <%= link_to root_path, "こちら" %>からログインしてください。
 </div>
