@@ -3,24 +3,24 @@
 
   <%= form_with model: @customer do |f| %>
 
-  <h6>名前</h6>
-    <label>（姓）</label>
-    <%= f.text_area :last_name %>
-    <label>（名）</label>
-    <%= f.text_area :first_name %>
-  <h6>フリガナ</h6>
-    <label>（セイ）</label>
-    <%= f.text_area :last_name %>
-    <label>（メイ）</label>
-    <%= f.text_area :first_name %>
-  <h6>メールアドレス</h6>
-    <%= f.text_area :email %>
-  <h6>郵便番号（ハイフンなし）</h6>
-    <%= f.text_area :postal_code %>
-  <h6>パスワード（6文字以上）</h6>
-    <%= f.text_area :passward %>
-  <h6>パスワード（確認用）</h6>
-    <%= f.text_area :passward %>
+
+    <%= f.label: 名前（姓）%>
+    <%= f.text_field :last_name %></br>
+    <%= f.label:（名）%>
+    <%= f.text_field :first_name %></br>
+    <%= f.label: フリガナ %>
+    <%= f.label:（セイ）%>
+    <%= f.text_field :last_name %></br>
+    <%= f.label:（メイ）%>
+    <%= f.text_field :first_name %></br>
+    <%= f.label: メールアドレス%>
+    <%= f.text_field :email %></br>
+    <%= f.label: 郵便番号（ハイフンなし）%>
+    <%= f.text_field :postal_code %></br>
+    <%= f.label: パスワード（6文字以上）%>
+    <%= f.text_field :passward %></br>
+    <%= f.label: パスワード（確認用）%>
+    <%= f.text_field :passward %>
 
     <%= f.submit "新規登録" %>
 

@@ -1,7 +1,22 @@
 class Public::CustomersController < ApplicationController
 
-  def customer
-    @customer = Customer.new
+
+  def show
+    @customer = current_customer
   end
 
-end
+  def edit
+    @customer = current_customer
+  end
+
+  def create
+  end
+
+  private
+
+  def customer_params
+    params.require(:customer).permit(:customer)
+  end
+
+
+  end

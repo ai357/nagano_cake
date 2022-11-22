@@ -1,6 +1,6 @@
 <div class="container">
 　<div class="row">
-    <div col>
+    <div class="col-md-2">
       <p>ジャンル検索</p>
       <table class = "table">
           <tbody>
@@ -17,9 +17,9 @@
     </div>
 
 
-    <div class="main-visual">
-      <div class="main-visual-content">
-      　<p class="main-visual-text">
+    <div class="row">
+      <div class="col-md-8">
+      　<p class="size-large">
         ようこそ、ながのCAKEへ！<br/>
         このサイトは、ケーキ販売のECサイトになります。<br/>
         会員でない方も商品の閲覧はできますが、<br/>
@@ -28,18 +28,17 @@
       </div>
     </div>
 
-
-    <h3>新着商品</h3>
-    <div class = "row">
-      <% @item.each do |item| %>
-    <div class = "col-2">
-        <%= image_tag item.get_image(100,150) %>
-        商品名
-        ¥<%= item.price %>
-    </div>
-      <% end %>
-
-
+    <div class="col-8">
+      <h3>新着商品</h3>
+      <div class = "row">
+        <% @item.each do |item| %>
+        <div class = "col-2">
+          <%= image_tag item.get_image(100,150) %>
+          商品名
+          ¥0,000<%= item.price %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
