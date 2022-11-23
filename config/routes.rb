@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   scope module: :public do
 
     get "/about" => "homes#about", as: "about"
-    get "/customers/my_page" => "customers#show"
+    get "/customers/my_page" => "customers#show", as: "customer"
     get "/customers/information/edit" => "customers#edit"
     get "/customers/unsubscribe" => "customers#unsubscribe"
     get "/customers/withdraw" => "customers#withdraw"
+    patch "/customers/information" => "customer#information"
 
-    resource :customers
+    # resource :customers
     resources :items
 
     root to: 'homes#top'
