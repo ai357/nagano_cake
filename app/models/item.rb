@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
 
   has_one_attached :image
+  
+  #アソシエーションNの方
+  belongs_to :genre
 
   def get_image(width, height)
     unless image.attached?

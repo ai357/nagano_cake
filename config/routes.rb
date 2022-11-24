@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "/customers/information/edit" => "customers#edit"
     get "/customers/unsubscribe" => "customers#unsubscribe"
     get "/customers/withdraw" => "customers#withdraw"
-    patch "/customers/information" => "customer#information"
+    patch "/customers/information" => "customers#update"
 
     # resource :customers
     resources :items
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :genres
   resources :orders
-  root to: 'home#top'
+  root to: 'homes#top'
   end
 
 

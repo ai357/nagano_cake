@@ -21,6 +21,8 @@
           </td>
           <td>
             <%= order.order_details.each do |order_detail| %>
+              
+            <% end %>
           </td>
           <td>
             <%= order.status %>
@@ -28,7 +30,7 @@
           </tr>
           <% end %>
         </tbody>
-          <%= paginate @order_detail_page %>
+          <%= paginate @order_details_page %>
   </table>
 </div>
 

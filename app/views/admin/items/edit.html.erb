@@ -4,7 +4,7 @@
   <%= form_with model: @item do |f| %>
 
     <h6>商品画像</h6>
-      <%= f.file_field :image, accept: "mage/*" %>
+      <%= f.file_field :image, accept: "image/*" %>
 
     <h6>商品名</h6>
       <%= f.text_field :name %>

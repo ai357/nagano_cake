@@ -1,7 +1,7 @@
 <div class="container">
   <h2>会員情報編集</h2>
 
-  <%= form_with model: @customer do |f| %>
+  <%= form_with model: @customer, url: customers_information_path do |f| %>
 
     氏名
       <%= f.text_field :last_name %>
@@ -15,7 +15,7 @@
       <%= f.text_field :postal_code %>
 
     住所
-    　<%= f.text_field :adress %>
+    　<%= f.text_field :address %>
 
     電話番号
       <%= f.text_field :telephone_number %>

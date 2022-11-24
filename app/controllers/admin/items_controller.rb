@@ -27,13 +27,21 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
+    @item = current_admin
+    @item.update(item_params)
+    if @item.save
+      redirect_to admin_item_path
+    else
+      #edit画面に留まること
+      render :edit
+    end
   end
 
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :is_active, :genre_id, :page)
+    params.require(:item).permit(:name, :introduction, :price, :is_active, :genre_id, :image)
   end
 
 

@@ -17,6 +17,14 @@ class Admin::CustomersController < ApplicationController
   end
 
   def update
+    @customer = current_customer
+    @customer.update(customer_params)
+    if @customer.save
+      redirect_to customer_path
+    else
+      #edit画面に留まること
+      render :edit
+    end  
   end
 
 end
