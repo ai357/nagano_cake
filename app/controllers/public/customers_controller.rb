@@ -23,6 +23,13 @@ class Public::CustomersController < ApplicationController
   def create
   end
 
+  def unsubscribe
+    @customer = current_customer
+    
+  end  
+
+
+
   private
 
   def customer_params
