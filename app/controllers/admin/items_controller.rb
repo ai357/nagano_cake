@@ -20,6 +20,7 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @price = @item.price + @item.price*10/100.round(0)
   end
 
   def edit
