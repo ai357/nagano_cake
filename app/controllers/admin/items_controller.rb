@@ -3,7 +3,7 @@ class Admin::ItemsController < ApplicationController
 
   def index
     @items = Item.all
-    #ページネーション用。部分テンプレートじゃないときはallいるっぽい。
+    #ページネーション用。部分テンプレートじゃないときはallいる。
     @item =Item.all.page(params[:page])
   end
 

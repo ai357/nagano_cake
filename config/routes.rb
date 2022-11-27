@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get "/customers/unsubscribe" => "customers#unsubscribe"
     get "/customers/withdraw" => "customers#withdraw"
     patch "/customers/information" => "customers#update"
+    get "/cart_items" => "cart_items#show"
 
     # resource :customers
     resources :items
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
   sessions: "admin/sessions"
 }
+
 
   namespace :admin do
   resources :items

@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #一括で前提として設定できる！
-Genre.create!([{name: 'cake'}, {name: 'クッキー'}])
+# Genre.create!([{name: 'cake'}, {name: 'クッキー'}])
 
 Admin.create!(email: "a@gmail.com", password: "aaaaaa")
