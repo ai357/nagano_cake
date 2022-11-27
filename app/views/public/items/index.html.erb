@@ -18,13 +18,16 @@
 
 
   <div class="row">
-        <div class="col-8">
-      <h3>商品一覧</h3>
+    <div class="col-8">
+      <h3>商品一覧(全件）</h3>
       <div class = "row">
         <% @item.each do |item| %>
-        <div class = "col-2">
-          <%= image_tag item.get_image(100,150) %>
-          商品名
+        <div class = "col-8">
+          <%= link_to item_path(item.id) do %>
+            <%= image_tag item.get_image(100,150) %>
+          <% end %>
+          商品名</br>
+          <%= item.name %>
           ¥<%= item.price %>
         </div>
         <% end %>
@@ -32,8 +35,8 @@
 
   </div>
   <div>
-  <%= paginate @item %>
   </div>
 </div>
+  <%= paginate @item %>
 
 
