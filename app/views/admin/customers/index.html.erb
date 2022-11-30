@@ -13,6 +13,7 @@
         <tbody>
           <% @customers.each do |customer| %>
           <tr>
+            <td></td>
             <td>
               <%= customer.id %>
             </td>
@@ -26,7 +27,7 @@
               <%= customer.email %>
             </td>
             <td>
-              <% if customer.is_deleted == false %>
+              <% if customer.is_deleted == true %>
               退会
               <% else %>
               有効
@@ -36,5 +37,5 @@
           <% end %>
         </tbody>
     </table>
-    <%= paginate @item %>
+    <%= paginate @customer %>
 </div>

@@ -10,11 +10,13 @@ Rails.application.routes.draw do
     get "/customers/unsubscribe" => "customers#unsubscribe"
     get "/customers/withdraw" => "customers#withdraw"
     patch "/customers/information" => "customers#update"
-    get "/cart_items" => "cart_items#show"
-    get "/addresses" => "addresses#index"
+    #get "/cart_items" => "cart_items#show"
+    #get "/addresses" => "addresses#index"
 
     # resource :customers
     resources :items
+    resources :cart_items
+    resources :addresses
 
     root to: 'homes#top'
 

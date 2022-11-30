@@ -11,7 +11,7 @@ class Public::CustomersController < ApplicationController
     if @customer.save
       redirect_to customer_path
     else
-      #edit画面に留まること
+      #htmlのedit画面に留まること
       render :edit
     end  
   end
@@ -25,6 +25,7 @@ class Public::CustomersController < ApplicationController
 
   def unsubscribe
     @customer = current_customer
+    
     
   end  
 
