@@ -2,7 +2,11 @@
   <h2>マイページ</h2>
     登録情報
     <%= link_to "編集する" , customers_information_edit_path, class: "btn btn-success" %>
-    <table>
+    </br>
+    </br>
+    
+  <div class="row">  
+    <table class = "table">
       <tbody>
         <tr>
           <td>氏名</td>
@@ -38,4 +42,11 @@
         </tr>
       </tbody>
     </table>
+  </div>
+  <label>配送先</label>
+  <button type=submit class="btn btn-primary">一覧を見る</button>
+  </br>
+  </br>
+  <lable>注文履歴</lable>
+  <button type=submit class="btn btn-primary">一覧を見る</button>
 </div>
