@@ -6,7 +6,7 @@ class Public::AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new(addresses_params)
+    @address = Address.new(address_params)
     @address.customer_id = current_customer.id
     if @address.save
       redirect_to addresses_path
@@ -17,33 +17,30 @@ class Public::AddressesController < ApplicationController
 
   def edit
     @address = Address.find(params[:id])
+    @address.customer_id = current_customer.id
     #@address.save
     #redirect_to addresses_path
   end
 
   def update
     @address = Address.find(params[:id])
-    @address.update(addresses_params)
+    @address.update(address_params)
     if @address.save
       redirect_to addresses_path
     else
       render :edit
     end
   end
-  
-  def delete
+
+  def destroy
     @address = Address.find(params[:id])
-    @address.destroy(addresses_params)
-    if @address.save
-      redirect_to addresses_path
-    else
-      render :edit
-    end
-    
-    
+    @address.destroy
+    redirect_to addresses_path
+  end
+
   private
-  def addresses
-    params.require(:addresses).permit(:customer_id, :postal_code, :address, :name)
+  def address_params
+    params.require(:address).permit(:customer_id, :postal_code, :address, :name)
   end
 
 end

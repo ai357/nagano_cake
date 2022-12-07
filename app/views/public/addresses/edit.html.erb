@@ -2,13 +2,15 @@
   <div class="row">
   <h2>配送先編集</h2>
 
-  <%= form_with model :@address, url address_path do |f| %>
+  <%= form_with model: @address, url: address_path do |f| %>
     郵便番号（ハイフンなし）
     <%= f.text_field :postal_code %>
     住所
     <%= f.text_field :address %>
     宛名
-    <%= f.text_field :last_name + :first_name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit "変更内容を保存", class: "btn btn-success" %>
   <% end %>
   </div>
 </div>

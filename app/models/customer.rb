@@ -12,10 +12,10 @@ class Customer < ApplicationRecord
   validates :address, presence: true
   validates :telephone_number, presence: true
   validates :email, presence: true
-  
+
   has_many :addresses
   has_many :orders
   has_many :order_details
-  
-  
+  has_many :cart_items
+
 end
