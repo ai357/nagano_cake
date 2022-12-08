@@ -4,7 +4,7 @@ class CartItem < ApplicationRecord
   belongs_to :customer
 
   def subtotal
-      item.with_tax_price * amount
+      self.item.with_tax_price * self.amount
   end
 
 
