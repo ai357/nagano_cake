@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    model:
+      customer: 'ユーザー'
+    attributes:
+      customer:
+        email: 'メールアドレス'
+        password: 'パスワード'
   enums:
     order:
       payment_method:
@@ -16,4 +23,8 @@ ja:
         wait: "製作待ち"
         making: "製作中"
         done: "製作完了"
+  time:
+    formats:
+      default: "%Y/%m/%d"
+      long: "%Y/%m/%d %H:%M:%S"
 

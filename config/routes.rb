@@ -12,18 +12,18 @@ Rails.application.routes.draw do
     patch "/customers/information" => "customers#update"
     #get "/cart_items" => "cart_items#show"
     #get "/addresses" => "addresses#index"
-    get "/orders/new" => "orders#new"
+    #get "/orders/new" => "orders#new"
     post "/orders/confirm" => "orders#confirm"
     get "/orders/complete" => "orders#complete"
-    post "/orders" => "orders#create"
-    get "/orders" => "orders#index"
-    get "/orders/:id" => "orders#show"
+    #post "/orders" => "orders#create"
+    #get "/orders" => "orders#index"
+    #get "/orders/:id" => "orders#show", as: "order"
     # resource :customers
     resources :items
     resources :cart_items
     delete "/cart_items" => "cart_items#destroy_all", as: "cart_destroy_all"
     resources :addresses
-
+    resources :orders
     root to: 'homes#top'
 
   end
