@@ -44,9 +44,13 @@ Rails.application.routes.draw do
   resources :items
   resources :customers
   resources :genres
-  resources :orders
+  resources :orders do
+    resources :order_details, only: [:update]
+  end
   root to: 'homes#top'
   end
+
+
 
 
 

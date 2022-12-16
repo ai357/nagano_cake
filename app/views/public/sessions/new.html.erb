@@ -1,3 +1,4 @@
+<div class ="container">
 <h2>ログイン</h2>
 
 <p>
@@ -5,21 +6,23 @@
 </p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div>
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+  <div>
+    <%= f.submit "ログイン", class: "btn btn-primary" %>
   </div>
 <% end %>
 
 
 <p>会員が登録がお済でない方</p></br>
 <%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください
+
+</div>

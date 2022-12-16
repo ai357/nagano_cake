@@ -20,7 +20,7 @@
           </tr>
           <tr>
             <td>税込価格<br>(税抜価格) </td>
-            <td><%= @price %></br>(<%= @item.price %>)</td>
+            <td><%= @price.to_s(:delimited) %></br>(<%= @item.price.to_s(:delimited) %>)</td>
           </tr>
           <tr>
             <td>販売ステータス</td>
