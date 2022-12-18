@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get "/customers/my_page" => "customers#show", as: "customer"
     get "/customers/information/edit" => "customers#edit"
     get "/customers/unsubscribe" => "customers#unsubscribe"
-    get "/customers/withdraw" => "customers#withdraw"
+    patch "/customers/withdraw" => "customers#withdraw"
     patch "/customers/information" => "customers#update"
     #get "/cart_items" => "cart_items#show"
     #get "/addresses" => "addresses#index"
