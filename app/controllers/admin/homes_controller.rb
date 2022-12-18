@@ -3,6 +3,7 @@ class Admin::HomesController < ApplicationController
   def top
     @orders = Order.all
     @order_details_page = OrderDetail.all.page(params[:page])
+    @amount = 0
   end
   
   

@@ -26,9 +26,9 @@
           <%= link_to item_path(item.id) do %>
             <%= image_tag item.get_image(100,150) %>
           <% end %>
-          商品名</br>
+          </br>商品名
           <%= item.name %>
-          ¥<%= item.price %>
+          ¥<%= item.price.to_s(:delimited) %>
         </div>
         <% end %>
       </div>

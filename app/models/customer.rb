@@ -21,5 +21,9 @@ class Customer < ApplicationRecord
   def fullname
     last_name + first_name
   end
+  
+  
+ 
+  
 
 end

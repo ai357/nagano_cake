@@ -1,7 +1,7 @@
 <div class="container">
   <h2>商品編集</h2>
 
-  <%= form_with model: @item do |f| %>
+  <%= form_with model: @item, url: admin_item_path, method: :patch do |f| %>
 
     <h6>商品画像</h6>
       <%= f.file_field :image, accept: "image/*" %>
@@ -13,10 +13,11 @@
       <%= f.text_area :introduction %>
 
     <h6>ジャンル</h6>
-      <%= f.text_area :Item.genre.name %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "--選択して下さい--" %>
+      <!--<%#= f.text_field :Item.genre.name %>-->
 
     <h6>税抜価格</h6>
-      <%= f.text_area :price %>
+      <%= f.text_field :price %>
 
     <h6>販売ステータス</h6>
       <%= f.radio_button :is_active, "true" %>

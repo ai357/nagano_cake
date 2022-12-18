@@ -25,15 +25,32 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
+  #
   before_action :customer_state, only: [:create]
 
 
   protected
+
   def customer_state
     @customer = Customer.find_by(email: params[:customer][:email])
+    # もし＠カスタマーが空の場合、ログインようにするため
     return if !@customer
+
     if @customer.valid_password?(params[:customer][:password])
+      if @customer.is_deleted == true
+        redirect_to new_customer_registration_path
+      else @customer.is_deleted == false
+      end
     end
   end
+
+
 end
 
+
+
+
+# def active_for_authentication?
+  # super子クラスから見た親クラスを使う
+    # super && (is_deleted == false)
+  # end

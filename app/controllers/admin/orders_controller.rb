@@ -1,10 +1,10 @@
 class Admin::OrdersController < ApplicationController
 
   def show
-      @customer = Customer.find(params[:id])
       #byebug
       #@order_detail = OrderDetail.find(params[:id])
       @order = Order.find(params[:id])
+      @customer = @order.customer
   end
 
   def update
@@ -12,7 +12,9 @@ class Admin::OrdersController < ApplicationController
       @order_detail = OrderDetail.find(params[:id])
       @order_details = @order.order_details.all
       if @order.update(order_params)
-        @order_details.update_all(making_status: 1) if @order.status == "confirm"
+        if @order.status == "confirm"
+          @order_details.update_all(making_status: 1) 
+        end
       end
       redirect_to admin_order_path(@order)
   end

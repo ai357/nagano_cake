@@ -4,7 +4,7 @@ class Public::CustomersController < ApplicationController
   def show
     @customer = current_customer
   end
-  
+
   def update
     @customer = current_customer
     @customer.update(customer_params)
@@ -13,7 +13,7 @@ class Public::CustomersController < ApplicationController
     else
       #htmlのedit画面に留まること
       render :edit
-    end  
+    end
   end
 
   def edit
@@ -25,9 +25,11 @@ class Public::CustomersController < ApplicationController
 
   def unsubscribe
     @customer = current_customer
+    @customer.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
     
-    
-  end  
+  end
 
 
 
