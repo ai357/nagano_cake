@@ -1,12 +1,13 @@
 class Admin::ItemsController < ApplicationController
 
-  # 一覧
+  # 一覧ページ
   def index
     @items = Item.all
     #ページネーション用。部分テンプレートじゃないときはallいる。
     @item =Item.all.page(params[:page])
   end
 
+  # Itemモデルにデータを入れる枠を作る
   def new
     @item = Item.new
   end
