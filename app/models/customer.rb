@@ -13,6 +13,7 @@ class Customer < ApplicationRecord
   validates :telephone_number, presence: true
   validates :email, presence: true
 
+  
   has_many :addresses
   has_many :orders
   has_many :order_details

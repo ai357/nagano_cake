@@ -1,6 +1,6 @@
 class Admin::ItemsController < ApplicationController
 
-
+  # 一覧
   def index
     @items = Item.all
     #ページネーション用。部分テンプレートじゃないときはallいる。

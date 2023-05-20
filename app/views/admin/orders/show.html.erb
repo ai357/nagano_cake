@@ -26,7 +26,7 @@
             <td>
               <%= form_with model: @order, url: admin_order_path(@order.id) do |f| %>
               <%= f.select :status, Order.statuses_i18n.invert, placeholder: 0 %>
-              <%= f.submit "更新", class: "btn btn-success" %>
+              <%= f.submit "更新する", class: "btn btn-success" %>
               <% end %>
             </td>
           </tr>
