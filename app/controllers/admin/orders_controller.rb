@@ -1,5 +1,6 @@
 class Admin::OrdersController < ApplicationController
 
+  # 注文
   def show
       #byebug
       #@order_detail = OrderDetail.find(params[:id])
