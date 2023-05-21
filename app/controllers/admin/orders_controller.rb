@@ -1,6 +1,6 @@
 class Admin::OrdersController < ApplicationController
 
-  # 注文
+  # 注文詳細ページ
   def show
       #byebug
       #@order_detail = OrderDetail.find(params[:id])
@@ -8,6 +8,7 @@ class Admin::OrdersController < ApplicationController
       @customer = @order.customer
   end
 
+  # 注文
   def update
       @order = Order.find(params[:id])
       @order_detail = OrderDetail.find(params[:id])
