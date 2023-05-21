@@ -8,9 +8,11 @@ class Admin::OrdersController < ApplicationController
       @customer = @order.customer
   end
 
-  # 注文
+  # 注文更新
   def update
+      # Orderモデルからidでデータを見つける
       @order = Order.find(params[:id])
+      
       @order_detail = OrderDetail.find(params[:id])
       @order_details = @order.order_details.all
       if @order.update(order_params)
