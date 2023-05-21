@@ -12,8 +12,9 @@ class Admin::OrdersController < ApplicationController
   def update
       # Orderモデルからidでデータを見つける
       @order = Order.find(params[:id])
-      # OrderDtailからidでデータを見つける（OrderとOrderDtailはアソシエーションで繋がってるからorderコントローラーで使用できる）
+      # OrderDtailのidカラムでデータを見つける（OrderとOrderDtailはアソシエーションで繋がってるからorderコントローラーで使用できる）
       @order_detail = OrderDetail.find(params[:id])
+      # Order_detailsカラムのすべてのデータを出す
       @order_details = @order.order_details.all
       if @order.update(order_params)
         if @order.status == "confirm"
