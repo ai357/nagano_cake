@@ -12,7 +12,7 @@ class Admin::OrdersController < ApplicationController
   def update
       # Orderモデルからidでデータを見つける
       @order = Order.find(params[:id])
-      
+      # OrderDtailからidでデータを見つける（OrderとOrderDtailはアソシエーションで繋がってるからorderコントローラーで使用できる）
       @order_detail = OrderDetail.find(params[:id])
       @order_details = @order.order_details.all
       if @order.update(order_params)
