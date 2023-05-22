@@ -16,6 +16,7 @@ class Admin::OrdersController < ApplicationController
       @order_detail = OrderDetail.find(params[:id])
       # Order_detailsカラムのすべてのデータを出す
       @order_details = @order.order_details.all
+      # ＠orderのステータスがconfirmだった場合に更新する
       if @order.update(order_params)
         if @order.status == "confirm"
           @order_details.update_all(making_status: 1) 
