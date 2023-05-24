@@ -1,5 +1,6 @@
 class Public::ItemsController < ApplicationController
   
+  # 商品一覧
   def index
     @genre = Genre.all
     @item =Item.all.page(params[:page])
