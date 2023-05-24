@@ -2,6 +2,7 @@ class Public::ItemsController < ApplicationController
   
   # 商品一覧
   def index
+    # @genreでGenreモデルのデータすべてを引き出す
     @genre = Genre.all
     @item =Item.all.page(params[:page])
   end
