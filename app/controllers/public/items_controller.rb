@@ -4,6 +4,7 @@ class Public::ItemsController < ApplicationController
   def index
     # @genreでGenreモデルのデータすべてを引き出す
     @genre = Genre.all
+    # @itemでItemモデルのデータすべてをページ付きで表示（kaminari ページネーション）
     @item =Item.all.page(params[:page])
   end
   
