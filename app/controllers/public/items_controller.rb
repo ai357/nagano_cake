@@ -8,8 +8,9 @@ class Public::ItemsController < ApplicationController
     @item =Item.all.page(params[:page])
   end
   
-  # 商品
+  # 商品詳細
   def show
+    # ItemモデルのIDから一つ探す
     @item = Item.find(params[:id])
     @genre = Genre.all
     @cart_item = CartItem.new
