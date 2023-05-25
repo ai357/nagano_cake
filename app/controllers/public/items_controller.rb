@@ -12,6 +12,7 @@ class Public::ItemsController < ApplicationController
   def show
     # ItemモデルのIDから一つ探す
     @item = Item.find(params[:id])
+    # Genreモデルすべて
     @genre = Genre.all
     @cart_item = CartItem.new
 
