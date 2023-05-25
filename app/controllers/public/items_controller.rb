@@ -8,6 +8,7 @@ class Public::ItemsController < ApplicationController
     @item =Item.all.page(params[:page])
   end
   
+  # 商品
   def show
     @item = Item.find(params[:id])
     @genre = Genre.all
