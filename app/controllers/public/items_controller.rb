@@ -23,6 +23,8 @@ class Public::ItemsController < ApplicationController
   
   private
   
+  # https://qiita.com/morikuma709/items/2dc20d922409ae7ce216
+  # 参考資料。require：データのオブジェクト名　permit:保存ができる
   def new_params
     params.require(:item).permit(:genre)
   end  
