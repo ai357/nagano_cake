@@ -14,6 +14,7 @@ class Public::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     # Genreモデルすべて
     @genre = Genre.all
+    # CartItemカラムに新たなにデータを入れる枠を作る
     @cart_item = CartItem.new
 
   end  
