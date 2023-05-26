@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
 
+  # Orderに新たにでーたを入れる枠を作る
   def new
       @order = Order.new
   end
