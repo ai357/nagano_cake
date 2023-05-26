@@ -5,7 +5,7 @@ class Public::OrdersController < ApplicationController
       @order = Order.new
   end
 
-
+  # 購入確認画面
   def confirm
       @cart_items = current_customer.cart_items
       @total = 0
