@@ -8,6 +8,7 @@ class Public::CartItemsController < ApplicationController
       (price*1.1).floor
   end
 
+    # cart_item一覧
   def index
       @cart_items = current_customer.cart_items.all
       @total = 0
