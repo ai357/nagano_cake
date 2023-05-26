@@ -30,6 +30,7 @@ class Public::CartItemsController < ApplicationController
     redirect_to cart_items_path
   end
 
+  # 買い物カゴをすべて削除
   def destroy_all
       @destroy = current_customer.cart_items.destroy_all
       redirect_to cart_items_path
