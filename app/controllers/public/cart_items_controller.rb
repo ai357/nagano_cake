@@ -4,6 +4,7 @@ class Public::CartItemsController < ApplicationController
     @cart_items = Item.find(params[:id])
   end
 
+  #消費税
   def with_tax_price
       (price*1.1).floor
   end
