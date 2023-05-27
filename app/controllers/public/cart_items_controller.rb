@@ -24,7 +24,7 @@ class Public::CartItemsController < ApplicationController
     redirect_to cart_items_path(@cart_item.id)
   end
 
-  # 1件のみ削除
+  # 買い物カゴ内の1件のみ削除
   def destroy
     @cart_items = CartItem.find(params[:id])
     @cart_items.destroy
