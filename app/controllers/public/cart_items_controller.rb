@@ -38,7 +38,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to cart_items_path
   end
 
-  # 買い物カゴに商品を
+  # 買い物カゴに商品をいれる
   def create
     if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
       cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
