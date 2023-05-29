@@ -40,6 +40,7 @@ class Public::CartItemsController < ApplicationController
 
   # 買い物カゴに商品をいれる
   def create
+    # カートのひとつを見つける
     if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
       cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
       cart_item.amount += params[:cart_item][:amount].to_i
