@@ -50,6 +50,7 @@ class Public::CartItemsController < ApplicationController
       cart_item.save
       redirect_to cart_items_path
     else
+      # カート内に同じ
       @cart_item = CartItem.new(cart_items_params)
       @cart_item.customer_id = current_customer.id
       @cart_item.save
