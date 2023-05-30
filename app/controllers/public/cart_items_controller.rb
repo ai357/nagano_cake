@@ -42,6 +42,7 @@ class Public::CartItemsController < ApplicationController
   def create
     # カートのひとつを見つけて、存在した場合
     if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
+      # カート内の同じ商品をひとつみつける
       cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
       cart_item.amount += params[:cart_item][:amount].to_i
       cart_item.save
