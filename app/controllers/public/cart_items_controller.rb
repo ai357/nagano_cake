@@ -44,8 +44,9 @@ class Public::CartItemsController < ApplicationController
     if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
       # カート内の同じ商品をひとつみつける
       cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
-      # 商品の個数を足して数字で表示
+      # 商品の個数を足して数字で表示する
       cart_item.amount += params[:cart_item][:amount].to_i
+      # cart_itemを保存
       cart_item.save
       redirect_to cart_items_path
     else
